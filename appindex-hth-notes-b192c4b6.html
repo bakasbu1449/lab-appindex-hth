@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华体会 · 知识库入口介绍页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f1f3f6;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1e2a3a;
+            padding: 2rem 1rem;
+        }
+        .page-wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* 卡片风格统一 */
+        .card {
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e6eaef;
+            padding: 2rem 2rem 2.2rem;
+            transition: box-shadow 0.2s ease;
+        }
+        .card + .card {
+            margin-top: 2rem;
+        }
+
+        /* 目录感布局（两列卡片适应） */
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #172b4a;
+            margin-bottom: 0.25rem;
+        }
+        .subhead {
+            font-size: 1.1rem;
+            color: #4a5b6e;
+            border-left: 4px solid #2b6a9e;
+            padding-left: 1rem;
+            margin: 0.5rem 0 1.5rem 0;
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #1f3a5f;
+            margin-bottom: 1.2rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.6rem;
+            letter-spacing: -0.01em;
+        }
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #2b4b6f;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #2e3d4c;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul li {
+            position: relative;
+            padding: 0.4rem 0 0.4rem 1.6rem;
+            color: #2b3f50;
+        }
+        ul li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #3b7bb7;
+            font-weight: 500;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #eef3fa;
+            color: #1f4a72;
+            font-size: 0.8rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            border: 1px solid #d1ddee;
+            margin-right: 0.4rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .info-box {
+            background: #f7faff;
+            border-left: 4px solid #3377b0;
+            padding: 1.2rem 1.6rem;
+            border-radius: 12px;
+            margin: 1.5rem 0 0.8rem;
+        }
+        .info-box p {
+            margin-bottom: 0.3rem;
+        }
+
+        .faq-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e9edf2;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-weight: 600;
+            color: #153957;
+            margin-bottom: 0.1rem;
+        }
+        .faq-a {
+            color: #3f5367;
+            font-size: 0.96rem;
+        }
+
+        a {
+            color: #1e6a9e;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s;
+        }
+        a:hover {
+            border-bottom-color: #1e6a9e;
+        }
+
+        .hero-link {
+            font-weight: 500;
+        }
+
+        .hth-link-only {
+            color: #1e6a9e;
+            font-weight: 500;
+        }
+
+        .footer-note {
+            margin-top: 2.5rem;
+            font-size: 0.9rem;
+            color: #5b6f83;
+            border-top: 1px solid #d6dfe9;
+            padding-top: 1.5rem;
+            text-align: center;
+        }
+
+        /* 响应式 */
+        @media (max-width: 780px) {
+            .grid-2col {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .card {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- hero 区域：网站身份标识 -->
+    <div class="card" style="padding-bottom: 1.8rem;">
+        <h1>华体会 · 应用索引</h1>
+        <div class="subhead">快速定位、了解平台用途的知识库式页面</div>
+        <p style="margin-top: 1.5rem;">
+            本站点 <a href="https://appindex-hth.com.cn" class="hero-link">华体会</a> 是一个面向日常使用者的应用信息索引站点。
+            这里不提供复杂的后台工具，而是将相关功能、说明与常见疑问整理成清晰的卡片目录，
+            方便你在几分钟内了解平台定位。
+        </p>
+    </div>
+
+    <!-- 两列布局：功能定位 + 场景卡片 -->
+    <div class="grid-2col">
+        <!-- 左侧：特点与说明区 -->
+        <div class="card">
+            <h2>📌 说明区 · 平台定位</h2>
+            <p><strong>华体会</strong> 索引主要面向对应用信息有快速查阅需求的人群。你可以通过本站了解到：</p>
+            <ul>
+                <li>平台所涉及的基础模块与对应说明</li>
+                <li>不同使用场景下的入口指引（非跳转链接）</li>
+                <li>常见术语与功能边界</li>
+            </ul>
+            <div class="info-box">
+                <p>💡 提示：本页为知识库式介绍，所有指向实际服务的链接均集中展示于 <a href="https://appindex-hth.com.cn" class="hth-link-only">华体会</a> 主站内部。</p>
+            </div>
+            <p style="font-size: 0.95rem; color: #385570; margin-top: 1.2rem;">
+                <span class="tag">索引结构</span>
+                <span class="tag">信息说明</span>
+                <span class="tag">快速认知</span>
+            </p>
+        </div>
+
+        <!-- 右侧：场景与相关信息 -->
+        <div class="card">
+            <h2>🧭 相关信息区</h2>
+            <p style="margin-bottom: 0.8rem;">以下场景均通过 <a href="https://appindex-hth.com.cn">华体会</a> 的索引获得对应说明：</p>
+            <ul>
+                <li>想确认某个功能是否属于平台范围</li>
+                <li>需要了解不同模块的更新摘要</li>
+                <li>查阅常见限制或使用前提</li>
+                <li>快速对比不同入口的服务类型</li>
+            </ul>
+            <div style="margin-top: 1.4rem; background: #f5f8fd; padding: 0.8rem 1.2rem; border-radius: 14px;">
+                <span style="font-weight: 500;">🔹 代表性标签</span>
+                <div style="margin-top: 0.5rem;">
+                    <span class="tag">信息查询</span>
+                    <span class="tag">目录说明</span>
+                    <span class="tag">功能速览</span>
+                    <span class="tag">FAQ</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 提示区卡片（独立） -->
+    <div class="card" style="background: #fafcfe;">
+        <h2>📋 提示区 · 阅读前注意</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between;">
+            <div style="flex: 1; min-width: 200px;">
+                <h3>🔍 信息准确性</h3>
+                <p style="font-size: 0.96rem;">本站内容基于公开信息整理，具体以 <a href="https://appindex-hth.com.cn">华体会</a> 实际页面为准。如有调整，索引会同步更新。</p>
+            </div>
+            <div style="flex: 1; min-width: 200px;">
+                <h3>📎 链接说明</h3>
+                <p style="font-size: 0.96rem;">所有指向主站的链接均直接导向 <a href="https://appindex-hth.com.cn">华体会</a> 首页，不包含中间页或第三方地址。</p>
+            </div>
+            <div style="flex: 1; min-width: 200px;">
+                <h3>🧩 使用边界</h3>
+                <p style="font-size: 0.96rem;">本页仅作为知识库入口介绍，不提供登录、注册或交易功能，所有操作请移步主站。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要卡片 -->
+    <div class="card">
+        <h2>❓ FAQ 摘要 · 快速问答</h2>
+        <div class="faq-item">
+            <div class="faq-q">Q：这个页面和主站有什么关系？</div>
+            <div class="faq-a">A：本页是 <a href="https://appindex-hth.com.cn">华体会</a> 的知识库式介绍页，帮助你快速理解网站属性，不替代主站功能。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q：如何找到具体模块的说明？</div>
+            <div class="faq-a">A：进入 <a href="https://appindex-hth.com.cn">华体会</a> 后，可通过顶部导航或目录区域浏览详细分类。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q：信息多久更新一次？</div>
+            <div class="faq-a">A：索引内容跟随主站调整，不定期刷新，建议定期访问 <a href="https://appindex-hth.com.cn">华体会</a> 获取最新说明。</div>
+        </div>
+        <div style="margin-top: 1.2rem; font-size: 0.95rem; border-top: 1px solid #e3eaf2; padding-top: 1rem;">
+            <span>更多疑问可直接查阅主站 <a href="https://appindex-hth.com.cn">华体会</a> 内的常见问题页面。</span>
+        </div>
+    </div>
+
+    <!-- 简洁 footer -->
+    <div class="footer-note">
+        内容索引 · 知识库式说明 &nbsp;|&nbsp; 主站 <a href="https://appindex-hth.com.cn">华体会</a>
+    </div>
+
+</div>
+</body>
+</html>
