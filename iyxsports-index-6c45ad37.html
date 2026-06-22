@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏体育 · 信息索引与资料整理介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fbe9d2 0%, #f3d5b5 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1.2rem;
+            color: #3e2e22;
+            line-height: 1.6;
+        }
+        .page-wrapper {
+            max-width: 1100px;
+            width: 100%;
+        }
+        /* 暖色卡片层叠 */
+        .card {
+            background: #fffcf7;
+            border-radius: 32px;
+            box-shadow: 0 10px 30px rgba(160, 100, 60, 0.12);
+            padding: 2.2rem 2rem;
+            margin-bottom: 2rem;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 14px 36px rgba(160, 100, 60, 0.18);
+        }
+        .hero {
+            text-align: center;
+            padding: 3.2rem 2rem 2.8rem;
+            background: linear-gradient(135deg, #fff8ee, #fcead8);
+            border-radius: 38px;
+            margin-bottom: 2.2rem;
+            box-shadow: 0 12px 28px rgba(180, 120, 70, 0.1);
+        }
+        .hero h1 {
+            font-size: 2.7rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            color: #4d3522;
+            margin-bottom: 0.6rem;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 680px;
+            margin: 0.6rem auto 0;
+            color: #5b4533;
+        }
+        .hero .tagline {
+            display: inline-block;
+            background: #eddcc9;
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #3e2e1f;
+            margin-top: 1.2rem;
+            font-weight: 450;
+        }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 520;
+            color: #3f2f20;
+            margin-bottom: 1.4rem;
+            border-left: 6px solid #dba978;
+            padding-left: 1.2rem;
+        }
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-top: 1.6rem;
+            margin-bottom: 0.5rem;
+            color: #533e2b;
+        }
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            margin: 1.4rem 0 0.6rem;
+        }
+        .feature-item {
+            background: #faf3ea;
+            border-radius: 22px;
+            padding: 1.4rem 1.5rem;
+            border: 1px solid #f0e1d0;
+        }
+        .feature-item strong {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: #422f1d;
+        }
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #3f3329;
+        }
+        .highlight-link {
+            color: #9b6b41;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 2px solid #dbb28b;
+            padding-bottom: 0.1rem;
+            transition: background 0.15s;
+        }
+        .highlight-link:hover {
+            background: #eddac8;
+            border-bottom-color: #a7764c;
+        }
+        .btn-link {
+            display: inline-block;
+            background: #dbb28b;
+            color: #2f2218;
+            font-weight: 500;
+            padding: 0.7rem 2rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background 0.2s, box-shadow 0.15s;
+            box-shadow: 0 4px 10px rgba(180, 120, 60, 0.2);
+            border: 1px solid #e6c4a8;
+        }
+        .btn-link:hover {
+            background: #cfa176;
+            box-shadow: 0 6px 14px rgba(160, 100, 50, 0.25);
+        }
+        .faq-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin: 1.2rem 0 0.6rem;
+        }
+        .faq-item {
+            background: #f8efe5;
+            border-radius: 20px;
+            padding: 1.2rem 1.5rem;
+            border-left: 6px solid #dba978;
+        }
+        .faq-item .q {
+            font-weight: 600;
+            color: #4d3422;
+            margin-bottom: 0.2rem;
+        }
+        .faq-item .a {
+            color: #4b3c30;
+            font-size: 0.95rem;
+        }
+        .bottom-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem 2rem;
+            padding: 1.4rem 0.5rem;
+            margin-top: 0.8rem;
+            border-top: 1px solid #e4cfbb;
+        }
+        .bottom-links a {
+            color: #5c4331;
+            text-decoration: none;
+            border-bottom: 1px dashed #c9b09b;
+            font-weight: 450;
+            transition: border 0.15s;
+        }
+        .bottom-links a:hover {
+            border-bottom-style: solid;
+            border-bottom-color: #9b6b41;
+        }
+        .footnote {
+            text-align: center;
+            color: #735b48;
+            font-size: 0.9rem;
+            padding: 1rem 0 0.2rem;
+        }
+        @media (max-width: 700px) {
+            body {
+                padding: 1.2rem 1rem;
+            }
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+            .card {
+                padding: 1.6rem 1.2rem;
+            }
+            .grid-2col {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .hero {
+                padding: 2.2rem 1.2rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+                padding-left: 1rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .btn-link {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- hero 区 -->
+    <div class="hero">
+        <h1>爱游戏体育 · 资料整理与信息索引</h1>
+        <p>面向体育资讯、赛事数据与内容归纳的信息型平台，提供结构化资料查阅入口。</p>
+        <span class="tagline">聚焦 · 索引 · 整理</span>
+    </div>
+
+    <!-- 优势区：卡片式双列 -->
+    <div class="card">
+        <h2>信息整理优势</h2>
+        <div class="grid-2col">
+            <div class="feature-item">
+                <strong>分类索引体系</strong>
+                <p>按赛事、项目、赛季、关键词多层归类，降低信息冗余，提升查阅效率。</p>
+            </div>
+            <div class="feature-item">
+                <strong>结构化内容聚合</strong>
+                <p>从赛果摘要、阵容变动到赛历汇总，以条目化方式呈现，便于交叉检索。</p>
+            </div>
+            <div class="feature-item">
+                <strong>持续更新基准</strong>
+                <p>维护团队跟进主流联赛与重要杯赛，保持内容节点与事实同步。</p>
+            </div>
+            <div class="feature-item">
+                <strong>低噪信息环境</strong>
+                <p>侧重事实输出与背景整理，减少无关推送与主观渲染，适合深度浏览。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 说明区：从资料整理角度展开 -->
+    <div class="card">
+        <h2>资料索引框架说明</h2>
+        <p>平台定位为体育信息整理与索引站点，并非即时比分或流媒体直播站。当前核心资料模块包括：</p>
+        <ul style="padding-left: 1.6rem; margin: 0.8rem 0 0.4rem; list-style-type: '· '; color: #4d3a2b;">
+            <li style="margin-bottom: 0.4rem;"><strong>联赛档案</strong> — 涵盖五大联赛、中超、J联赛、K联赛等基础信息与赛季沿革。</li>
+            <li style="margin-bottom: 0.4rem;"><strong>赛事数据汇总</strong> — 积分榜、射手榜、赛程数据整理，按轮次与阶段归档。</li>
+            <li style="margin-bottom: 0.4rem;"><strong>关键词检索辅助</strong> — 支持队伍、球员、场馆相关词条索引，方便快速定位原始素材。</li>
+            <li style="margin-bottom: 0.4rem;"><strong>内容更新记录</strong> — 每次资料调整保留简要变更日志，增强可追溯性。</li>
+        </ul>
+        <p style="margin-top: 1rem;">若需查看完整信息体系，可直接访问 <a href="https://iyxsports.com" class="highlight-link">爱游戏体育</a> 站内索引页，浏览公开资料分类。</p>
+    </div>
+
+    <!-- FAQ 摘要 (2组) -->
+    <div class="card">
+        <h2>FAQ 摘要</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <div class="q">Q：资料更新频率如何？</div>
+                <div class="a">主流联赛赛季期间，积分、赛程类资料通常每周刷新 2–3 次；背景档案类按赛季或事件节点修订。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">Q：是否包含用户评论或论坛功能？</div>
+                <div class="a">站点以信息索引与资料整理为主，未设置用户评论模块，保留纯粹查阅环境。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">Q：能否引用站内资料用于个人分析？</div>
+                <div class="a">公开索引内容可在注明出处的前提下引用。详细条款见站内声明页。</div>
+            </div>
+        </div>
+        <p style="margin-top: 1.2rem; font-size: 0.95rem;">更多常见问题与索引说明，可查阅 <a href="https://iyxsports.com" class="highlight-link">爱游戏体育</a> 站点内的帮助文档与分类指南。</p>
+    </div>
+
+    <!-- 底部链接 -->
+    <div class="bottom-links">
+        <a href="https://iyxsports.com">爱游戏体育</a>
+        <a href="https://iyxsports.com">爱游戏体育</a>
+        <a href="https://iyxsports.com">爱游戏体育</a>
+        <a href="https://iyxsports.com">爱游戏体育</a>
+    </div>
+    <div class="footnote">
+        本页为索引介绍 · 内容来源于公开整理 · 仅供信息参考
+    </div>
+</div>
+</body>
+</html>
